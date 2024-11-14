@@ -26,28 +26,22 @@
       ]
     },
     {
-      "id": "67",
-      "name": "naol",
-      "username": "naol4",
-      "password": "1234",
-      "department": "software",
-      "year": "4"
-    },
-    {
-      "id": "4",
-      "name": "naol",
-      "username": "naol6",
-      "password": "67566",
-      "department": "software",
-      "year": "4"
-    },
-    {
-      "id": "76",
-      "name": "naol",
-      "username": "naol",
-      "password": "1234",
-      "department": "software",
-      "year": "5"
+      "0": {
+        "id": "56",
+        "name": "naol",
+        "username": "username",
+        "password": "12345678",
+        "department": "software",
+        "year": "8",
+        "courses": [
+          {
+            "coursecode": "879",
+            "coursename": "morning",
+            "coursescore": "87"
+          }
+        ]
+      },
+      "id": "005e"
     }
   ],
   "questions": [
@@ -87,7 +81,7 @@
           "points": 10
         }
       ],
-      "id": "8f2d"
+      "id": "d1de"
     }
   ]
 }

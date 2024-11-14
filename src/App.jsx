@@ -20,10 +20,15 @@ const router=createBrowserRouter([
       {
         path:"/login",
         element:<Login />
-      }
+      },
+      
 
     
-])
+],{
+  future: {
+    v7_relativeSplatPath: true,
+  },
+})
 function App() {
   return (
     <Registercontext>

@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [logindata,setLogindata]=useState({username:"",password:""})
    const {login,state}  =useRegister();
-   console.log(state)
   //  const navigate=useNavigate()
   //  useEffect(function (){
   //    if(state.islogin) navigate("/home",{replace:true})
@@ -13,7 +12,13 @@ function Login() {
 
   function handlesubmit(e){
      e.preventDefault();
-     login(logindata)
+  //    <ul>
+  //    {state.users.map((user, index) => (
+  //      <li key={index}>
+  //        Username: {user.username}, password: {user.password}
+  //      </li>
+  //    ))}
+  //  </ul>
   }
   function handleusename(e){
     e.preventDefault()

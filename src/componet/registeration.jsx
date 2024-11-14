@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRegister } from "../context/Registercontext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Registeration() {
   const [formData, setFormData] = useState({
@@ -10,43 +10,32 @@ function Registeration() {
     password: '',
     department:"",
     year:null,
+    courses: [ { coursecode: null, coursename: "", coursescore: null, } ]
   });
   const {dispatch,state}=useRegister();
-// function handleregister(e){
-//   e.preventDefault()
-//   if(formData.username=="" && formData=="") return;
-//   register(formData)
 
-//   setFormData({...formData,username:"",password:""})
-// }
-const handleuser = (event) => {
-  setFormData({ ...formData, username: event.target.value });
 
-};
-const handlePawd = (event) => {
-  event.preventDefault()
-  setFormData({ ...formData, password: event.target.value });
-};
-const handlename = (event) => {
-  event.preventDefault()
-  setFormData({ ...formData, name: event.target.value });
-};
-const handleid = (event) => {
-  event.preventDefault()
-  setFormData({ ...formData, id: event.target.value });
-};
-const handledepartment = (event) => {
-  event.preventDefault()
-  setFormData({ ...formData, department: event.target.value });
-};
-const handleyear = (event) => {
-  event.preventDefault()
-  setFormData({ ...formData, year: event.target.value });
-};
+useEffect(function (){
+  async function fetchdata() {
+    try{
+      const res=await fetch('http://localhost:8000/students')
+      const data=await res.json();
+      console.log(data)
+      dispatch({ type: 'register-success', payload: data });
+    }
+    catch(error){
+      console.log(error)
+    }
+    
+  }
+
+  fetchdata();
+},[setFormData])
 
 const handleSubmit = async (event) => {
   event.preventDefault();
   dispatch({ type: 'register-request' });
+ console.log([formData])
 
   try {
     // Replace this with your actual registration logic 
@@ -54,7 +43,7 @@ const handleSubmit = async (event) => {
     const response = await fetch('http://localhost:8000/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify([formData]),
     });
 
     if (!response.ok) {
@@ -62,45 +51,65 @@ const handleSubmit = async (event) => {
     }
 
     const data = await response.json();
+    console.log(data)
     dispatch({ type: 'register-success', payload: data });
-    setFormData({...formData,id:null,username:"",password:"",name:"",department:"",year:null}) 
+    setFormData({...formData,id:null,username:"",password:"",name:"",department:"",year:null,courses:[]}) 
   } catch (error) {
     dispatch({ type: 'register-error', payload: error.message });
   }
 };
-console.log(state.error)
+const handleinput =(event)=>{
+  event.preventDefault();
+  const {name,value}=event.target;
+  setFormData({...formData,
+    [name]:value
+  })
+
+}
+
+  const handlecourseadd = (index, event) => { const { name, value } = event.target; setFormData((prevFormData) => { const newCourses = Array.isArray(prevFormData.courses) ? [...prevFormData.courses] : []; newCourses[index][name] = value; return { ...prevFormData, courses: newCourses }; }); };
+  const addCourse = () => { 
+    setFormData((prevFormData) => { const newCourses = Array.isArray(prevFormData.courses) ? prevFormData.courses : []; return { ...prevFormData, courses: [ ...newCourses, { coursecode: null, coursename: "", coursescore: null } ] }; });};
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
+      <h1>student informtion</h1>
         <label htmlFor="id">id no</label>
-        <input type="number" value={formData.id} onChange={handleid}/> <br />
+        <input type="number" name="id" value={formData.id} onChange={handleinput}/> <br />
       <label htmlFor="name">name</label>
-      <input type="text" value={formData.name} onChange={handlename}/><br />
+      <input type="text" name="name" value={formData.name} onChange={handleinput}/><br />
 
       <label htmlFor="department">department</label>
-      <input type="text" value={formData.department} onChange={handledepartment} />  <br />
+      <input type="text" name="department" value={formData.department} onChange={handleinput} />  <br />
       <label htmlFor="username">username</label>
   
-      <input type="text" value={formData.username} onChange={ handleuser} />
+      <input type="text" name="username" value={formData.username} onChange={ handleinput} />
       <br />
       <label htmlFor="password">Password</label>
-      <input type="password" value={formData.password} onChange={handlePawd} />
+      <input type="password" name="password" value={formData.password} onChange={handleinput} />
       <br />
       <label htmlFor="year">Year</label>
-      <input type="number" value={formData.year} onChange={handleyear} />
+      <input type="number" name="year" value={formData.year} onChange={handleinput} />
       <br />
-      <button>Register</button>
+
+      <h1>Courses</h1>{ 
+      Array.isArray(formData.courses) && formData.courses.map((course,index)=>(
+        <div key={index}>
+      <label htmlFor="courseid">courseid</label>
+      <input type="number" name="coursecode" value={course.coursecode || ""} onChange={(event)=>handlecourseadd(index,event)} /> <br />
+
+      <label htmlFor="courseid">course name</label>
+      <input type="text" name="coursename" value={course.coursename || ""} onChange={(event)=>handlecourseadd(index,event)} /> <br />
+ 
+      <label htmlFor="courseid">course score</label>
+      <input type="number" name="coursescore" value={course.coursescore || ""} onChange={(event)=>handlecourseadd(index,event)} /> <br />
+    
+       </div>))}
+      <button type="button" onClick={addCourse}>add course</button>
+      <button type="submit">register</button>
       </form>
-         <ul>
-           {state.users.map((user, index) => (
-             <li key={index}>
-               Username: {user.username}, password: {user.password}
-             </li>
-           ))}
-         </ul>
-         <div>
-          {state.error}
-         </div>
+
 
       <div>
       <div>if you have an account </div>
