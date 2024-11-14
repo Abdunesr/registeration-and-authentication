@@ -1,0 +1,93 @@
+{
+  "students": [
+    {
+      "id": "1402037",
+      "name": "Naol Meseret",
+      "department": "software enginering",
+      "username": "naolm",
+      "password": "123456",
+      "year": 4,
+      "courses": [
+        {
+          "coursecode": 1,
+          "coursename": "mats",
+          "coursescore": 0
+        },
+        {
+          "coursecode": 2,
+          "coursename": "",
+          "coursescore": 0
+        },
+        {
+          "coursecode": 3,
+          "coursename": "physics",
+          "coursescore": 0
+        }
+      ]
+    },
+    {
+      "id": "67",
+      "name": "naol",
+      "username": "naol4",
+      "password": "1234",
+      "department": "software",
+      "year": "4"
+    },
+    {
+      "id": "4",
+      "name": "naol",
+      "username": "naol6",
+      "password": "67566",
+      "department": "software",
+      "year": "4"
+    },
+    {
+      "id": "76",
+      "name": "naol",
+      "username": "naol",
+      "password": "1234",
+      "department": "software",
+      "year": "5"
+    }
+  ],
+  "questions": [
+    {
+      "mats": [
+        {
+          "question": "who is the legend of 21 centurey",
+          "options": [
+            "balatsar",
+            "jony sins",
+            "didiy d",
+            "mia khalifa"
+          ],
+          "answer": 1,
+          "points": 10
+        },
+        {
+          "question": "who is the legend of 21 centurey",
+          "options": [
+            "balatsar",
+            "jony sins",
+            "didiy d",
+            "mia khalifa"
+          ],
+          "answer": 1,
+          "points": 10
+        },
+        {
+          "question": "who is the legend of 21 centurey",
+          "options": [
+            "balatsar",
+            "jony sins",
+            "didiy d",
+            "mia khalifa"
+          ],
+          "answer": 1,
+          "points": 10
+        }
+      ],
+      "id": "8f2d"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import {
 import Home from './componet/Home'
 import Login from './componet/Login'
 import Registeration from './componet/registeration'
+import { Authcontext } from "./context/Authcontext";
+import { Registercontext } from "./context/Registercontext";
 
 const router=createBrowserRouter([
    {
@@ -24,7 +26,11 @@ const router=createBrowserRouter([
 ])
 function App() {
   return (
-   <RouterProvider router={router} />
+    <Registercontext>
+       <Authcontext> 
+         <RouterProvider router={router} />
+       </Authcontext>
+    </Registercontext>
   )
   
   ;
