@@ -9,16 +9,10 @@ function Login() {
   //  useEffect(function (){
   //    if(state.islogin) navigate("/home",{replace:true})
   //  }[state.islogin,navigate])
-
+ 
   function handlesubmit(e){
      e.preventDefault();
-  //    <ul>
-  //    {state.users.map((user, index) => (
-  //      <li key={index}>
-  //        Username: {user.username}, password: {user.password}
-  //      </li>
-  //    ))}
-  //  </ul>
+     login(logindata)
   }
   function handleusename(e){
     e.preventDefault()
@@ -28,7 +22,7 @@ function Login() {
     e.preventDefault()
     setLogindata({...logindata,password:e.target.value})
   }
-
+ 
   return (
     <div>
       <form  onSubmit={handlesubmit}>
@@ -39,6 +33,9 @@ function Login() {
       <br />
       <button>Login</button>
       </form>
+      <div>
+       { state.islogin ? "login successfuly":"invalid username or password" }
+       </div>
     </div>
   );
 }

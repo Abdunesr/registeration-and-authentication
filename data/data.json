@@ -64,6 +64,56 @@
           "coursescore": "879787"
         }
       ]
+    },
+    {
+      "id": "9887",
+      "name": "mmana",
+      "username": "uayay",
+      "password": "989898",
+      "department": "manamn",
+      "year": "7",
+      "courses": [
+        {
+          "coursecode": "887987",
+          "coursename": "abnbda",
+          "coursescore": "76676"
+        }
+      ]
+    },
+    {
+      "id": "7878",
+      "name": "mohamed",
+      "username": "mohamed",
+      "password": "12345678",
+      "department": "cs",
+      "year": "7",
+      "courses": [
+        {
+          "coursecode": "897",
+          "coursename": "ciiii",
+          "coursescore": "7676676"
+        }
+      ]
+    },
+    {
+      "id": "90876",
+      "name": "fuad",
+      "username": "fuad13",
+      "password": "fuad13",
+      "department": "diploma",
+      "year": "4",
+      "courses": [
+        {
+          "coursecode": "786",
+          "coursename": "morning",
+          "coursescore": "89"
+        },
+        {
+          "coursecode": "897",
+          "coursename": "nandmn",
+          "coursescore": "9877"
+        }
+      ]
     }
   ],
   "questions": [

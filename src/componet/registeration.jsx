@@ -20,7 +20,6 @@ useEffect(function (){
     try{
       const res=await fetch('http://localhost:8000/students')
       const data=await res.json();
-      console.log(data)
       dispatch({ type: 'register-success', payload: data });
     }
     catch(error){
@@ -35,12 +34,8 @@ useEffect(function (){
 const handleSubmit = async (event) => {
   event.preventDefault();
   dispatch({ type: 'register-request' });
-  const formdata=[formData]
- console.log(formdata)
-
   try {
-    // Replace this with your actual registration logic 
-    // (e.g., using a backend API)
+
     const response = await fetch('http://localhost:8000/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -108,7 +103,13 @@ const handleinput =(event)=>{
       <button type="button" onClick={addCourse}>add course</button>
       <button type="submit">register</button>
       </form>
-
+      <ul>
+     {state.users.map((user, index) => (
+      <li key={index}>
+          Username: {user.username}, password: {user.password}
+      </li>
+     ))}
+   </ul>
 
       <div>
       <div>if you have an account </div>

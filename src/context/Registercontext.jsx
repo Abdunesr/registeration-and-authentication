@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useState } from 'react'
+import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
 
 
 const Register=createContext()
@@ -39,13 +39,31 @@ function reducer(state,action){
 
  function Registercontext({children}) {
    const [state,dispatch]=useReducer(reducer,initalstate)
-   function login(userinfo){
-    if(userinfo.username==state.users.username && userinfo.password==state.users.password ){
-      dispatch({type:"login"})
-      console.log(state.islogin)
-    }
+   const [apidata,setApidata]=useState([])
 
+   function login(userinfo){
+    const checkCredentials = (input) => {
+       const { username, password } = input; 
+       return apidata.some(student => student.username === username && student.password === password); };
+       const credentials = userinfo 
+       if (checkCredentials(credentials)) { 
+        console.log("Credentials are valid");
+        dispatch({type:"login"})
+       console.log(state.islogin) 
+        } 
+       else { 
+        console.log("Invalid credentials");
+       }
    }
+
+   useEffect(function(){
+        async function fetchdata(){
+          const res=await fetch("http://localhost:8000/students")
+          const data=await res.json()
+          setApidata(data)
+         }
+         fetchdata()
+   },[apidata])
   return (
     <Register.Provider value={{
       dispatch,
