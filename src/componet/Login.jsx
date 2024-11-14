@@ -5,10 +5,15 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [logindata,setLogindata]=useState({username:"",password:""})
    const {login,state}  =useRegister();
-  //  const navigate=useNavigate()
-  //  useEffect(function (){
-  //    if(state.islogin) navigate("/home",{replace:true})
-  //  }[state.islogin,navigate])
+
+   const navigate=useNavigate()
+
+   useEffect(()=>{
+
+     if(state.islogin) {
+      return navigate("/home")
+    }
+   },[state.islogin,navigate])
  
   function handlesubmit(e){
      e.preventDefault();
