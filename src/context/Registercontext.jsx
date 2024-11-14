@@ -3,7 +3,7 @@ import React, { createContext, useContext, useEffect, useReducer, useState } fro
 
 const Register=createContext()
 const initalstate={
-     users:[],
+     user:[],
      isloading:false,
      error:false,
      islogin:false,
@@ -14,7 +14,7 @@ function reducer(state,action){
     case "register-success":
       return {
         ...state,
-        users:[...state.users,action.payload]
+        user:[...state?.user,action?.payload]
       }
     case "register-request":
       return {
@@ -33,6 +33,10 @@ function reducer(state,action){
             ...state,
             islogin:true
           }
+        case "logout":
+          return {
+            state:initalstate,
+          }
 
   }
 }
@@ -40,16 +44,19 @@ function reducer(state,action){
  function Registercontext({children}) {
    const [state,dispatch]=useReducer(reducer,initalstate)
    const [apidata,setApidata]=useState([])
-
    function login(userinfo){
     const checkCredentials = (input) => {
        const { username, password } = input; 
+
        return apidata.some(student => student.username === username && student.password === password); };
+
        const credentials = userinfo 
+
        if (checkCredentials(credentials)) { 
         console.log("Credentials are valid");
         dispatch({type:"login"})
-       console.log(state.islogin) 
+        const student=apidata.find(s=>s.username===credentials.username)
+         dispatch({type:"register-success",payload:student})
         } 
        else { 
         console.log("Invalid credentials");
@@ -63,7 +70,9 @@ function reducer(state,action){
           setApidata(data)
          }
          fetchdata()
-   },[apidata])
+   },[setApidata])
+
+
   return (
     <Register.Provider value={{
       dispatch,

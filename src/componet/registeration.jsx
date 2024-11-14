@@ -12,26 +12,10 @@ function Registeration() {
     year:null,
     courses: [ { coursecode: null, coursename: "", coursescore: null, } ]
   });
-  const {dispatch,state}=useRegister();
-
-
-useEffect(function (){
-  async function fetchdata() {
-    try{
-      const res=await fetch('http://localhost:8000/students')
-      const data=await res.json();
-      dispatch({ type: 'register-success', payload: data });
-    }
-    catch(error){
-      console.log(error)
-    }
-    
-  }
-
-  fetchdata();
-},[setFormData])
+  const {dispatch}=useRegister();
 
 const handleSubmit = async (event) => {
+
   event.preventDefault();
   dispatch({ type: 'register-request' });
   try {
@@ -46,19 +30,19 @@ const handleSubmit = async (event) => {
       throw new Error('Registration failed');
     }
     const data = await response.json();
-    dispatch({ type: 'register-success', payload: data });
     setFormData({...formData,id:null,username:"",password:"",name:"",department:"",year:null,courses:[]}) 
   } catch (error) {
     dispatch({ type: 'register-error', payload: error.message });
   }
 };
+
+
 const handleinput =(event)=>{
   event.preventDefault();
   const {name,value}=event.target;
   setFormData({...formData,
     [name]:value
   })
-
 }
 
   const handlecourseadd = (index, event) => { const { name, value } = event.target; setFormData((prevFormData) => { const newCourses = Array.isArray(prevFormData.courses) ? [...prevFormData.courses] : []; newCourses[index][name] = value; return { ...prevFormData, courses: newCourses }; }); };
@@ -103,13 +87,6 @@ const handleinput =(event)=>{
       <button type="button" onClick={addCourse}>add course</button>
       <button type="submit">register</button>
       </form>
-      <ul>
-     {state.users.map((user, index) => (
-      <li key={index}>
-          Username: {user.username}, password: {user.password}
-      </li>
-     ))}
-   </ul>
 
       <div>
       <div>if you have an account </div>
