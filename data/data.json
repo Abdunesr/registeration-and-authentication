@@ -26,22 +26,44 @@
       ]
     },
     {
-      "0": {
-        "id": "56",
-        "name": "naol",
-        "username": "username",
-        "password": "12345678",
-        "department": "software",
-        "year": "8",
-        "courses": [
-          {
-            "coursecode": "879",
-            "coursename": "morning",
-            "coursescore": "87"
-          }
-        ]
-      },
-      "id": "005e"
+      "id": "78",
+      "name": "90",
+      "username": "90",
+      "password": "uuy",
+      "department": "87",
+      "year": "6",
+      "courses": [
+        {
+          "coursecode": "887",
+          "coursename": "ouh",
+          "coursescore": "8797"
+        }
+      ]
+    },
+    {
+      "id": "89",
+      "name": "fuad sead",
+      "username": "fuad88",
+      "password": "fuad34",
+      "department": "software enginering",
+      "year": null,
+      "courses": [
+        {
+          "coursecode": "7888",
+          "coursename": "manes",
+          "coursescore": "9000"
+        },
+        {
+          "coursecode": "998989",
+          "coursename": "mnamn",
+          "coursescore": "0"
+        },
+        {
+          "coursecode": "8999",
+          "coursename": "mananbd",
+          "coursescore": "879787"
+        }
+      ]
     }
   ],
   "questions": [

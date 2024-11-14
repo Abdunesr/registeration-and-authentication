@@ -35,7 +35,8 @@ useEffect(function (){
 const handleSubmit = async (event) => {
   event.preventDefault();
   dispatch({ type: 'register-request' });
- console.log([formData])
+  const formdata=[formData]
+ console.log(formdata)
 
   try {
     // Replace this with your actual registration logic 
@@ -43,15 +44,13 @@ const handleSubmit = async (event) => {
     const response = await fetch('http://localhost:8000/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify([formData]),
+      body: JSON.stringify(formData,null, 2),
     });
 
     if (!response.ok) {
       throw new Error('Registration failed');
     }
-
     const data = await response.json();
-    console.log(data)
     dispatch({ type: 'register-success', payload: data });
     setFormData({...formData,id:null,username:"",password:"",name:"",department:"",year:null,courses:[]}) 
   } catch (error) {
