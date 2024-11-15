@@ -4,14 +4,17 @@ import { useRegister } from "../context/Registercontext";
 function Home() {
   const navigate=useNavigate()
   const {state,dispatch}=useRegister()
+
   const {username,password,name,id,department,courses}=state.user[0]
+
   function handlelogout(){
     dispatch({type:"logout"})
     if(state.islogin){
      return  navigate("/")
       }
   }
-  console.log(state.user)
+
+
   return <div>
 
 <h1>THIS IS hOME</h1>
