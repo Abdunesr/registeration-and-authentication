@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Studentreg() {
+export default function Navbar() {
   return (
     <div>
-        student reg form
+      this is nav bar
     </div>
   )
 }

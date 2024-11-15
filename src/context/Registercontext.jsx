@@ -44,6 +44,10 @@ function reducer(state,action){
  function Registercontext({children}) {
    const [state,dispatch]=useReducer(reducer,initalstate)
    const [apidata,setApidata]=useState([])
+   const [administrator,setAdministrator]=useState({
+    username:"admin",
+    password:"admin"
+   })
    function login(userinfo){
     const checkCredentials = (input) => {
        const { username, password } = input; 
@@ -76,7 +80,9 @@ function reducer(state,action){
   return (
     <Register.Provider value={{
       dispatch,
-          state,login
+          state,
+          login,
+          administrator
     }}>
       {children}
     </Register.Provider>
