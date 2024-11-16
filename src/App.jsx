@@ -20,7 +20,7 @@ const router=createBrowserRouter([
         element:<Applayout />,
         children:[
                {
-               path:"/dashbord/student-reg-form",
+               path:"/dashbord",
                 element:<Studentreg />,
     
                },

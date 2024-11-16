@@ -5,7 +5,8 @@ import { useRegister } from '../context/Registercontext';
 import { useNavigate } from 'react-router-dom';
 
 export  function Login() {
-    const {administrator}=useRegister();
+    const {administrator,dispatch,state}=useRegister();
+    // const {islogin}=state
     const {username,password}=administrator;
     const [admin_info,setAdmin_info]=useState({
         admin_username:"",
@@ -26,7 +27,11 @@ export  function Login() {
       event.preventDefault()
      
       if(auth){
+        dispatch({type:"correct-data"})
         return naviagate("/dashbord")
+      }
+      else{
+        dispatch({type:"incorect-data"})
       }
     }
     return (
@@ -95,11 +100,11 @@ export  function Login() {
               </div>
             </form>
   
-           {/* {!auth || <p className="mt-10 text-center absolute w-[20%] top-0 right-3  text-gray-500">
+           {state?.islogin ? <p className="mt-10 text-center absolute w-[20%] top-0 right-3  text-gray-500">
             <Alert variant={"solid"} size='md'  color="danger">
              incorect username or password
             </Alert>
-            </p>} */}
+            </p> :<></>}
           </div>
          
         </div>

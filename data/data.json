@@ -26,97 +26,17 @@
       ]
     },
     {
-      "id": "1402099",
+      "id": "87664",
       "name": "fuad seid",
-      "username": "fuad13",
-      "password": "fuad13",
+      "username": "fuad34",
+      "password": "fuad34",
       "department": "software enginering",
-      "year": "4",
+      "year": "2",
       "courses": [
         {
-          "coursecode": "23578",
-          "coursename": "compiler",
-          "coursescore": "0"
-        },
-        {
-          "coursecode": "54453553",
-          "coursename": "java",
-          "coursescore": "0"
-        }
-      ]
-    },
-    {
-      "id": "128900",
-      "name": "naol",
-      "username": "naolrt",
-      "password": "12345678",
-      "department": "mnamn",
-      "year": "3",
-      "courses": [
-        {
-          "coursecode": "87765",
-          "coursename": "namanman",
-          "coursescore": "67"
-        }
-      ]
-    },
-    {
-      "id": "13208",
-      "name": "mnmanm",
-      "username": "amndanbs",
-      "password": "amnbanb",
-      "department": "nmanman",
-      "year": "3",
-      "courses": [
-        {
-          "coursecode": "877",
-          "coursename": "878",
-          "coursescore": "87686"
-        }
-      ]
-    },
-    {
-      "id": "189722",
-      "name": "nambda",
-      "username": "mnabdmn",
-      "password": "nambnbdmna",
-      "department": "manmd",
-      "year": "4",
-      "courses": [
-        {
-          "coursecode": "87767",
-          "coursename": "nabmndb",
-          "coursescore": "877"
-        }
-      ]
-    },
-    {
-      "id": "76676767",
-      "name": "bbbvvbvbv",
-      "username": "nmnbmbn",
-      "password": "nbmnbmn",
-      "department": "bnbnbn",
-      "year": "4",
-      "courses": [
-        {
-          "coursecode": "88776",
-          "coursename": "bnbvb",
-          "coursescore": "87"
-        }
-      ]
-    },
-    {
-      "id": "87867",
-      "name": "namnbsmnsabnbda",
-      "username": "mnamnbdnmb",
-      "password": "mbamnbnambdmnab",
-      "department": "ndambmndbasnba",
-      "year": "1",
-      "courses": [
-        {
-          "coursecode": "87",
-          "coursename": "bbn",
-          "coursescore": "8766"
+          "coursecode": "65",
+          "coursename": "76",
+          "coursescore": "78"
         }
       ]
     }

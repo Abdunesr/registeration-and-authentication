@@ -29,10 +29,15 @@ function reducer(state,action){
           isloading:false,
           error:error.payload
         }
-        case "login":
+        case "incorect-data":
           return {
             ...state,
             islogin:true
+          }
+        case "correct-data":
+          return {
+            ...state,
+            islogin:false
           }
         case "logout":
           return {
@@ -49,6 +54,8 @@ function reducer(state,action){
     username:"admin",
     password:"admin"
    })
+
+
    function login(userinfo){
     const checkCredentials = (input) => {
        const { username, password } = input; 
