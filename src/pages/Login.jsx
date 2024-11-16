@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Alert from '@mui/joy/Alert';
+
 import { useRegister } from '../context/Registercontext';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,10 +21,11 @@ export  function Login() {
       })
       
     }
-
+   const auth=username===admin_info.admin_username && password===admin_info.admin_password
     function handlesubmit(event){
       event.preventDefault()
-      if(username===admin_info.admin_username && password===admin_info.admin_password){
+     
+      if(auth){
         return naviagate("/dashbord")
       }
     }
@@ -92,10 +95,13 @@ export  function Login() {
               </div>
             </form>
   
-            <p className="mt-10 text-center text-sm/6 text-gray-500">
-            
-            </p>
+           {/* {!auth || <p className="mt-10 text-center absolute w-[20%] top-0 right-3  text-gray-500">
+            <Alert variant={"solid"} size='md'  color="danger">
+             incorect username or password
+            </Alert>
+            </p>} */}
           </div>
+         
         </div>
       </>
     )

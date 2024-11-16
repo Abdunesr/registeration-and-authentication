@@ -26,177 +26,22 @@
       ]
     },
     {
-      "id": "78",
-      "name": "90",
-      "username": "90",
-      "password": "uuy",
-      "department": "87",
-      "year": "6",
-      "courses": [
-        {
-          "coursecode": "887",
-          "coursename": "ouh",
-          "coursescore": "8797"
-        }
-      ]
-    },
-    {
-      "id": "89",
-      "name": "fuad sead",
-      "username": "fuad88",
-      "password": "fuad34",
-      "department": "software enginering",
-      "year": null,
-      "courses": [
-        {
-          "coursecode": "7888",
-          "coursename": "manes",
-          "coursescore": "9000"
-        },
-        {
-          "coursecode": "998989",
-          "coursename": "mnamn",
-          "coursescore": "0"
-        },
-        {
-          "coursecode": "8999",
-          "coursename": "mananbd",
-          "coursescore": "879787"
-        }
-      ]
-    },
-    {
-      "id": "9887",
-      "name": "mmana",
-      "username": "uayay",
-      "password": "989898",
-      "department": "manamn",
-      "year": "7",
-      "courses": [
-        {
-          "coursecode": "887987",
-          "coursename": "abnbda",
-          "coursescore": "76676"
-        }
-      ]
-    },
-    {
-      "id": "7878",
-      "name": "mohamed",
-      "username": "mohamed",
-      "password": "12345678",
-      "department": "cs",
-      "year": "7",
-      "courses": [
-        {
-          "coursecode": "897",
-          "coursename": "ciiii",
-          "coursescore": "7676676"
-        }
-      ]
-    },
-    {
-      "id": "90876",
-      "name": "fuad",
+      "id": "1402099",
+      "name": "fuad seid",
       "username": "fuad13",
       "password": "fuad13",
-      "department": "diploma",
+      "department": "software enginering",
       "year": "4",
       "courses": [
         {
-          "coursecode": "786",
-          "coursename": "morning",
-          "coursescore": "89"
-        },
-        {
-          "coursecode": "897",
-          "coursename": "nandmn",
-          "coursescore": "9877"
-        }
-      ]
-    },
-    {
-      "id": "897656",
-      "name": "manmanm",
-      "username": "77a876aa",
-      "password": "mamnabmnb",
-      "department": "mnamna",
-      "year": "8676",
-      "courses": [
-        {
-          "coursecode": "9798",
-          "coursename": "90898",
-          "coursescore": "09897897"
-        }
-      ]
-    },
-    {
-      "id": "87654",
-      "name": "sead",
-      "username": "uystsva",
-      "password": "7654",
-      "department": "moana",
-      "year": null,
-      "courses": [
-        {
-          "coursecode": "9898",
-          "coursename": "monatal",
-          "coursescore": "87"
-        }
-      ]
-    },
-    {
-      "id": "8765",
-      "name": "muaz",
-      "username": "username",
-      "password": "password",
-      "department": "uytava",
-      "year": "6",
-      "courses": [
-        {
-          "coursecode": "7",
-          "coursename": "physics",
+          "coursecode": "23578",
+          "coursename": "compiler",
           "coursescore": "0"
         },
         {
-          "coursecode": "9",
-          "coursename": "biology",
+          "coursecode": "54453553",
+          "coursename": "java",
           "coursescore": "0"
-        }
-      ]
-    },
-    {
-      "id": "876",
-      "name": "abdela",
-      "username": "abdela@y",
-      "password": "127689",
-      "department": "software",
-      "year": "7",
-      "courses": [
-        {
-          "coursecode": "908",
-          "coursename": "morning",
-          "coursescore": "876"
-        },
-        {
-          "coursecode": "9876",
-          "coursename": "98665",
-          "coursescore": "976544"
-        }
-      ]
-    },
-    {
-      "id": "788",
-      "name": "maonao",
-      "username": "mnaban",
-      "password": "manmba",
-      "department": "anbnavd",
-      "year": "6",
-      "courses": [
-        {
-          "coursecode": "87",
-          "coursename": "mnbaba",
-          "coursescore": "7"
         }
       ]
     }
