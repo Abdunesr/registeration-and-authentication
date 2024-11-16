@@ -21,7 +21,8 @@ const router=createBrowserRouter([
         children:[
                {
                path:"/dashbord/student-reg-form",
-                element:<Studentreg />
+                element:<Studentreg />,
+    
                },
                {
                 path:"/dashbord/question-input-form",

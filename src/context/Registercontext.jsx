@@ -11,17 +11,18 @@ const initalstate={
 
 function reducer(state,action){
   switch(action.type){
-    case "register-success":
-      return {
-        ...state,
-        user:[...state?.user,action?.payload]
-      }
+   
     case "register-request":
       return {
         ...state,
         isloading:true,
         error:null,
       }
+      case "register-success":
+        return {
+          ...state,
+          isloading:false
+        }
       case "register-error":
         return{
           ...state,
