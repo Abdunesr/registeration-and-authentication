@@ -6,7 +6,6 @@ import { useRegister } from '../context/Registercontext'
 export default function Navbar() {
  const {administrator}= useRegister()
  const {username}=administrator
-  console.log(username)
   const user = {
     name:"administrator" ,
     email: username,
@@ -31,12 +30,12 @@ export default function Navbar() {
   return (
     <>
            <div className="min-h-full">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-blue-400">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
-                <div className="shrink-0 text-white">
-                <h1>Online Exam </h1>
+                <div className="shrink-0 ">
+                <h1 className='text-black text-2xl font-extrabold'>Online Exam </h1>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">

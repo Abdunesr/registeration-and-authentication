@@ -7,6 +7,7 @@ import {Login as Dashbordlogin} from './pages/Login'
 import { Registercontext } from "./context/Registercontext";
 import Applayout from "./pages/Applayout";
 import Studentreg from "./pages/Studentreg";
+import Error from "./pages/Error";
 import Questioninput from "./pages/Questioninput";
 
 const router=createBrowserRouter([
@@ -27,6 +28,9 @@ const router=createBrowserRouter([
                {
                 path:"/dashbord/question-input-form",
                 element:<Questioninput />,
+                },
+                {path:"/dashbord/error",
+                  element:<Error />
                 }
               ]
           

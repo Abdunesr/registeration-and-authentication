@@ -5,8 +5,9 @@ const Register=createContext()
 const initalstate={
      user:[],
      isloading:false,
-     error:false,
+     error:"",
      islogin:false,
+     iserror:false,
 }
 
 function reducer(state,action){
@@ -27,7 +28,8 @@ function reducer(state,action){
         return{
           ...state,
           isloading:false,
-          error:error.payload
+          error:action.payload,
+          iserror:true
         }
         case "incorect-data":
           return {
@@ -65,14 +67,10 @@ function reducer(state,action){
        const credentials = userinfo 
 
        if (checkCredentials(credentials)) { 
-        console.log("Credentials are valid");
         dispatch({type:"login"})
-        const student=apidata.find(s=>s.username===credentials.username)
+          const student=apidata.find(s=>s.username===credentials.username)
          dispatch({type:"register-success",payload:student})
         } 
-       else { 
-        console.log("Invalid credentials");
-       }
    }
 
    useEffect(function(){

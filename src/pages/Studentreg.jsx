@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+
 import { useRegister } from "../context/Registercontext";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Loading from "../componet/Loading";
+import Error from "./Error";
+import { useNavigate } from "react-router-dom";
 export default function Studentreg() {
 
     const [formData, setFormData] = useState({
@@ -13,10 +15,16 @@ export default function Studentreg() {
       year:null,
       courses: [ { coursecode: null, coursename: "", coursescore: null, } ]
     });
-    const {dispatch ,state}=useRegister();
-    const {isloading}=state;
-    console.log(isloading)
 
+    const navigate=useNavigate()
+    const {dispatch ,state}=useRegister();
+    const {isloading,iserror,error}=state;
+
+    useEffect(()=>{
+     if(iserror){
+      navigate("/dashbord/error")
+     }
+    },[iserror])
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch({ type: 'register-request' });
@@ -26,13 +34,14 @@ export default function Studentreg() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData,null, 2),
       });
+
       if (!response.ok) {
         throw new Error('Registration failed');
       }
+      
       if(response.ok){
         dispatch({type:"register-success"})
       } 
-      // const data = await response.json();
       
       setFormData({...formData,id:"",username:"",password:"",name:"",department:"",year:"",courses:[{}]}) 
     } catch (error) {
@@ -57,7 +66,7 @@ export default function Studentreg() {
 
   return (
     <>
-    { isloading ? <Loading />:
+    { iserror ? <Error error={error}/>:  isloading ? <Loading />:
 
       <form onSubmit={handleSubmit}>
       <div className="space-y-12">
@@ -195,7 +204,7 @@ export default function Studentreg() {
               </div>
             </div>
             </span>))}
-            <button type="button" onClick={addCourse}  className="rounded-md sm:mt-40 w-max h-max bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">add course</button>
+            <button type="button" onClick={addCourse}  className="rounded-md sm:mt-40 w-max h-max bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">add course</button>
           </div>
         </div>
 
@@ -206,7 +215,7 @@ export default function Studentreg() {
   
         <button
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
           Save
         </button>
