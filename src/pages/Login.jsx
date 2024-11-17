@@ -3,10 +3,11 @@ import Alert from '@mui/joy/Alert';
 
 import { useRegister } from '../context/Registercontext';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/Authprovider';
 
 export  function Login() {
     const {administrator,dispatch,state}=useRegister();
-    
+   const {login }=useAuth()
     const {username,password}=administrator;
     const [admin_info,setAdmin_info]=useState({
         admin_username:"",
@@ -25,9 +26,10 @@ export  function Login() {
    const auth=username===admin_info.admin_username && password===admin_info.admin_password
     function handlesubmit(event){
       event.preventDefault()
-     
+       
       if(auth){
         dispatch({type:"correct-data"})
+        login()
         return naviagate("/dashbord")
       }
       else{

@@ -10,6 +10,8 @@ import Studentreg from "./pages/Studentreg";
 import Error from "./pages/Error";
 import Questioninput from "./pages/Questioninput";
 import StudentResult from "./pages/StudentResult";
+import ProtectedRoute from "./context/Protectedroute";
+import { AuthProvider } from "./context/Authprovider";
 
 const router=createBrowserRouter([
        
@@ -19,7 +21,7 @@ const router=createBrowserRouter([
       },
         { 
         path:"/dashbord",
-        element:<Applayout />,
+        element:<ProtectedRoute><Applayout /></ProtectedRoute>,
         children:[
                {
                path:"/dashbord",
@@ -48,7 +50,9 @@ const router=createBrowserRouter([
 function App() {
   return (
     <Registercontext>
-         <RouterProvider router={router} />
+      <AuthProvider >
+      <RouterProvider router={router} />
+      </AuthProvider>
     </Registercontext>
   )
   
