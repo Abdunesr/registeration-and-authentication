@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 export default function Studentreg() {
 
     const [formData, setFormData] = useState({
-      id:null,
+      id:"",
       name:"",
       username: '',
       password: '',
       department:"",
-      year:null,
-      courses: [ { coursecode: null, coursename: "", coursescore: null, } ]
+      year:"",
+      courses: [ { coursecode: null, coursename: "", coursescore: 0, } ]
     });
 
     const navigate=useNavigate()
@@ -81,6 +81,7 @@ export default function Studentreg() {
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">dbu-</span>
                   <input
+                    required
                     type="number" name="id" value={formData.id} onChange={handleinput}
                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
                   />
@@ -99,7 +100,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
-             
+             required
              type="text" name="name" value={formData.name} onChange={handleinput}
              
              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -113,6 +114,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
+                required
                  type="text" name="department" value={formData.department} onChange={handleinput}
                  
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -126,7 +128,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
-                 
+                 required
                  type="text" name="username" value={formData.username} onChange={ handleinput}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
@@ -141,7 +143,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
-                 
+                 required
                  type="password" name="password" value={formData.password} onChange={handleinput}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
@@ -153,6 +155,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
+                required
                 type="number"
                 max="5"
                 min="1"
@@ -169,7 +172,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
-                
+                required
                 type="number" name="coursecode" value={course.coursecode || ""} onChange={(event)=>handlecourseadd(index,event)}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
@@ -182,7 +185,7 @@ export default function Studentreg() {
               </label>
               <div className="mt-2">
                 <input
-                
+                required
                 type="text" name="coursename" value={course.coursename || ""} onChange={(event)=>handlecourseadd(index,event)}
               
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -198,7 +201,7 @@ export default function Studentreg() {
                 <input
               type="number" name="coursescore"
               value={course.coursescore || ""} onChange={(event)=>handlecourseadd(index,event)}
-             
+               disabled
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                 />
               </div>

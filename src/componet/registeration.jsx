@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRegister } from "../context/Registercontext";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 function Registeration() {
   const [formData, setFormData] = useState({
@@ -10,26 +10,23 @@ function Registeration() {
     password: '',
     department:"",
     year:null,
-    courses: [ { coursecode: null, coursename: "", coursescore: null, } ]
+    courses: [ { coursecode: "", coursename: "", coursescore: "", } ]
   });
   const {dispatch}=useRegister();
 
 const handleSubmit = async (event) => {
-
   event.preventDefault();
   dispatch({ type: 'register-request' });
   try {
-
     const response = await fetch('http://localhost:8000/students', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData,null, 2),
     });
-
     if (!response.ok) {
       throw new Error('Registration failed');
     }
-    const data = await response.json();
+    // const data = await response.json();
     setFormData({...formData,id:null,username:"",password:"",name:"",department:"",year:null,courses:[]}) 
   } catch (error) {
     dispatch({ type: 'register-error', payload: error.message });
