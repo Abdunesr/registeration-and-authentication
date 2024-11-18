@@ -1,17 +1,20 @@
 import { useState } from "react"
 import { useRegister } from "../context/Registercontext";
+import Loading from "../componet/Loading";
 
 export default function Questioninput() {
-  const [questions, setQuestions] = useState({
+  const inistalstate={
     subject: "",
     questionss: [{
       question: "",
       option: ["", "", "", ""],
       answer: "",
     }],
-  });
+  }
+  const [questions, setQuestions] = useState(inistalstate);
 
-  const {dispatch}=useRegister()
+  const {dispatch,state}=useRegister()
+  const {isloading,error,iserror}=state
   function handleinput(event) {
     const { name, value } = event.target;
     setQuestions(prevState => ({
@@ -32,6 +35,7 @@ export default function Questioninput() {
        if (!response.ok) {
         throw new Error('Registration failed');
       }
+       setQuestions(inistalstate)
        dispatch({ type: 'register-success' });
     } catch (error) {
        dispatch({ type: 'register-error', payload: error.message });
@@ -69,7 +73,8 @@ export default function Questioninput() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+   {iserror ? <Error error={error}/>:isloading ?<Loading />: <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-xl font-bold text-gray-900">Post questions one by one</h2>
@@ -85,6 +90,7 @@ export default function Questioninput() {
                   type="text"
                   value={questions.subject}
                   onChange={handleinput}
+                  required
                   className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
                 />
               </div>
@@ -102,6 +108,7 @@ export default function Questioninput() {
                     id={`question-${index}`}
                     name="question"
                     type="text"
+                    required
                     value={questions.questionss[index].question}
                     onChange={(event) => handleaddquestion(index, event)}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -120,6 +127,7 @@ export default function Questioninput() {
                       id={`option-${choiceIndex}`}
                       name={`option-${choiceIndex}`}
                       type="text"
+                      required
                       value={questions.questionss[index].option[choiceIndex]}
                       onChange={(event) => handleaddquestion(index, event)}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -137,6 +145,7 @@ export default function Questioninput() {
                     id={`answer-${index}`}
                     name="answer"
                     type="text"
+                    required
                     value={questions.questionss[index].answer}
                     onChange={(event) => handleaddquestion(index, event)}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
@@ -159,6 +168,7 @@ export default function Questioninput() {
           Save
         </button>
       </div>
-    </form>
+    </form> }
+          </>
   )
 }
