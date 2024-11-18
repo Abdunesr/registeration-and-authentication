@@ -1,16 +1,17 @@
 import { useState } from "react"
+import { useRegister } from "../context/Registercontext";
 
 export default function Questioninput() {
   const [questions, setQuestions] = useState({
     subject: "",
     questionss: [{
       question: "",
-      option: ["", "", "", ""], // Initialize with four empty options
+      option: ["", "", "", ""],
       answer: "",
     }],
   });
 
-  // Function to handle input change for the subject
+  const {dispatch}=useRegister()
   function handleinput(event) {
     const { name, value } = event.target;
     setQuestions(prevState => ({
@@ -18,8 +19,26 @@ export default function Questioninput() {
       [name]: value,
     }));
   }
-
-  // Function to handle input change for each question and options
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    dispatch({ type: 'register-request' });
+    try {
+      const response = await fetch('http://localhost:8000/questions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(questions),
+       });
+  
+       if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+       dispatch({ type: 'register-success' });
+    } catch (error) {
+       dispatch({ type: 'register-error', payload: error.message });
+     }
+  };
+  
+ 
   function handleaddquestion(index, event) {
     event.preventDefault();
     const { name, value } = event.target;
@@ -39,7 +58,6 @@ export default function Questioninput() {
     }
   }
 
-  // Function to add a new question
   const addquestion = () => {
     setQuestions(prevState => ({
       ...prevState,
@@ -51,7 +69,7 @@ export default function Questioninput() {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-xl font-bold text-gray-900">Post questions one by one</h2>

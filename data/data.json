@@ -97,33 +97,25 @@
             "didiy d",
             "mia khalifa"
           ],
-          "answer": 1,
-          "points": 10
-        },
-        {
-          "question": "who is the legend of 21 centurey",
-          "options": [
-            "balatsar",
-            "jony sins",
-            "didiy d",
-            "mia khalifa"
-          ],
-          "answer": 1,
-          "points": 10
-        },
-        {
-          "question": "who is the legend of 21 centurey",
-          "options": [
-            "balatsar",
-            "jony sins",
-            "didiy d",
-            "mia khalifa"
-          ],
-          "answer": 1,
-          "points": 10
+          "answer": 1
         }
-      ],
-      "id": "6d78"
+      ]
+    },
+    {
+      "id": "db0b",
+      "subject": "mats",
+      "questionss": [
+        {
+          "question": "namndam",
+          "option": [
+            "nbambd",
+            "manmd,",
+            "amnd",
+            "mand"
+          ],
+          "answer": "ma,nd"
+        }
+      ]
     }
   ]
 }
