@@ -5,17 +5,16 @@ import Loading from "../componet/Loading";
 import Error from "./Error";
 import { useNavigate } from "react-router-dom";
 export default function Studentreg() {
-
-    const [formData, setFormData] = useState({
-      id:"",
-      name:"",
-      username: '',
-      password: '',
-      department:"",
-      year:"",
-      courses: [ { coursecode: null, coursename: "", coursescore: 0, } ]
-    });
-
+  const [formData, setFormData] = useState({
+    id:"",
+    name:"",
+    username: '',
+    password: '',
+    department:"",
+    year:"",
+    courses: [ { coursecode: null, coursename: "", coursescore: 0, } ]
+  });
+   
     const navigate=useNavigate()
     const {dispatch ,state}=useRegister();
     const {isloading,iserror,error}=state;
@@ -58,7 +57,15 @@ export default function Studentreg() {
     })
   }
   
-    const handlecourseadd = (index, event) => { const { name, value } = event.target; setFormData((prevFormData) => { const newCourses = Array.isArray(prevFormData.courses) ? [...prevFormData.courses] : []; newCourses[index][name] = value; return { ...prevFormData, courses: newCourses }; }); };
+
+    const handlecourseadd = (index, event) => { 
+      const { name, value } = event.target; 
+      setFormData((prevFormData) => { 
+      const  newCourses = Array.isArray(prevFormData.courses) ? [...prevFormData.courses] : []; 
+      newCourses[index][name] = value; 
+      return { ...prevFormData, courses: newCourses }; 
+    }); };
+
     const addCourse = () => { 
       setFormData((prevFormData) => { const newCourses = Array.isArray(prevFormData.courses) ? prevFormData.courses : []; return { ...prevFormData, courses: [ ...newCourses, { coursecode: null, coursename: "", coursescore: null } ] }; });};
   
