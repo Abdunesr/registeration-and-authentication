@@ -3,9 +3,12 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 import { useRegister } from '../context/Registercontext'
+import { useAuth } from '../context/Authprovider'
 export default function Navbar() {
  const {administrator}= useRegister()
  const {username}=administrator
+ const {logout}=useAuth()
+
   const user = {
     name:"administrator" ,
     email: username,
@@ -20,7 +23,7 @@ export default function Navbar() {
   
   const userNavigation = [
     { name: 'Your Profile', href: '#' },
-    { name: 'Sign out', href: '/' },
+    { name: 'Sign out', href: '/'  },
   ]
   
   function classNames(...classes) {
@@ -75,6 +78,7 @@ export default function Navbar() {
                         <MenuItem key={item.name}>
                           <Link
                             href={item.href}
+                            
                             className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                           >
                             {item.name}

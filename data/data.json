@@ -11,17 +11,17 @@
         {
           "coursecode": 1,
           "coursename": "mats",
-          "coursescore": 0
+          "coursescore": 87
         },
         {
           "coursecode": 2,
-          "coursename": "",
-          "coursescore": 0
+          "coursename": "physics",
+          "coursescore": 100
         },
         {
           "coursecode": 3,
-          "coursename": "physics",
-          "coursescore": 0
+          "coursename": "history",
+          "coursescore": 30
         }
       ]
     },
@@ -35,151 +35,26 @@
       "courses": [
         {
           "coursecode": "65",
-          "coursename": "76",
-          "coursescore": "78"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "name": "",
-      "username": "",
-      "password": "",
-      "department": "",
-      "year": null,
-      "courses": [
-        {
-          "coursecode": null,
-          "coursename": "",
-          "coursescore": null
-        }
-      ]
-    },
-    {
-      "id": "7888",
-      "name": "98989",
-      "username": "m,nd,man",
-      "password": "mnbabd",
-      "department": ",manmdnaa",
-      "year": "4",
-      "courses": [
-        {
-          "coursecode": "87",
-          "coursename": "87",
-          "coursescore": "98"
-        }
-      ]
-    },
-    {
-      "id": null,
-      "name": "",
-      "username": "",
-      "password": "",
-      "department": "",
-      "year": null,
-      "courses": [
-        {
-          "coursecode": null,
-          "coursename": "",
-          "coursescore": null
+          "coursename": "chemistry",
+          "coursescore": "97"
         }
       ]
     }
   ],
   "questions": [
     {
-      "id": "db0b",
-      "subject": "mats",
+      "id": "4c8f",
+      "subject": "general question",
       "questionss": [
         {
-          "question": "namndam",
+          "question": "who is the legend in 21 centurey?",
           "option": [
-            "nbambd",
-            "manmd,",
-            "amnd",
-            "mand"
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
           ],
-          "answer": "ma,nd"
-        }
-      ]
-    },
-    {
-      "id": "1152",
-      "subject": "mnan",
-      "questionss": [
-        {
-          "question": "",
-          "option": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": "824b",
-      "subject": "mnan",
-      "questionss": [
-        {
-          "question": "",
-          "option": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": "f789",
-      "subject": "mnan",
-      "questionss": [
-        {
-          "question": "",
-          "option": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": "d44e",
-      "subject": "",
-      "questionss": [
-        {
-          "question": "",
-          "option": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "answer": ""
-        }
-      ]
-    },
-    {
-      "id": "052f",
-      "subject": "",
-      "questionss": [
-        {
-          "question": "",
-          "option": [
-            "",
-            "",
-            "",
-            ""
-          ],
-          "answer": ""
+          "answer": "1"
         }
       ]
     }
