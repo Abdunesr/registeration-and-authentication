@@ -39,6 +39,21 @@
           "coursescore": "97"
         }
       ]
+    },
+    {
+      "id": "123456",
+      "name": "abedla ",
+      "username": "abdela45",
+      "password": "abdela34",
+      "department": "software enginering",
+      "year": "1",
+      "courses": [
+        {
+          "coursecode": "457",
+          "coursename": "compiler design",
+          "coursescore": 0
+        }
+      ]
     }
   ],
   "questions": [

@@ -1,13 +1,27 @@
 import { useEffect, useState } from "react"
+import { useRegister } from "../context/Registercontext";
+import Loading from "../componet/Loading";
   
   export default function StudentResult() {
     const [students,setStudents]=useState([])
-
+   const {dispatch,state}=useRegister()
+const {error,iserror,isloading}=state
     useEffect(()=>{
     async function fetchcoursedata() {
-      const res=await fetch("http://localhost:8000/students")
-      const data=await res.json()
-      setStudents(data)
+      try{
+        dispatch({ type: 'register-request' });
+        const res=await fetch("http://localhost:8000/students")
+        if(!res.ok){
+          throw new Error("can't recive data from api")
+        }
+        const data=await res.json()
+        dispatch({type:"register-success"})
+        setStudents(data)
+      }
+      catch(error){
+        dispatch({ type: 'register-error', payload: error.message });
+      }
+  
     }
     fetchcoursedata()
     },[setStudents])
@@ -19,13 +33,16 @@ import { useEffect, useState } from "react"
       { student.courses.forEach(course => { console.log(`Course Name: ${course.coursename}`); console.log(`Course Score: ${course.coursescore}`); }); } } });
 
     return (
-      <ul role="list" className="divide-y divide-gray-100">
+      <>
+    { iserror ? <Error error={error}/>:  isloading ? <Loading />:
+       <ul role="list" className="divide-y divide-gray-100">
         {students.map((student,studentindex) => (
           <li key={studentindex} className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">
               <div className="min-w-0 flex-auto">
                 <p className="text-sm/6 font-semibold text-gray-900">{student.name}</p>
                 <p className="mt-1 truncate text-xs/5 text-gray-500">{student.id}</p>
+                <p className="mt-1 truncate text-xs/5 text-gray-500">{student.department}</p>
               </div>
             </div>
        
@@ -42,7 +59,8 @@ import { useEffect, useState } from "react"
             </div>
           </li>
         ))}
-      </ul>
+      </ul>}
+         </>
     )
   }
   
