@@ -42,6 +42,10 @@ const router=createBrowserRouter([
               ]
           
         }
+        ,{
+          path:"*",
+          element:<Error />
+        }
 ],{
   future: {
     v7_relativeSplatPath: true,

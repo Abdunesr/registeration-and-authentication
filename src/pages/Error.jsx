@@ -8,7 +8,7 @@ export default function Error({error}) {
           <h1 className='text-sm sm:text-3xl font-bold text-red-500 mb-8 '>{error} </h1>
           <h2>error code </h2>
           </div>
-          <Link to="/">
+          <Link to="/dashbord">
            <button type="outlined" color="error"  >Back</button>
            </Link>
          </div>

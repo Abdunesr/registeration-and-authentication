@@ -7,7 +7,6 @@ import { useAuth } from '../context/Authprovider'
 export default function Navbar() {
  const {administrator}= useRegister()
  const {username}=administrator
- const {logout}=useAuth()
 
   const user = {
     name:"administrator" ,
@@ -22,7 +21,6 @@ export default function Navbar() {
   ]
   
   const userNavigation = [
-    { name: 'Your Profile', href: '#' },
     { name: 'Sign out', href: '/'  },
   ]
   
@@ -91,7 +89,7 @@ export default function Navbar() {
               </div>
               <div className="-mr-2 flex md:hidden">
                 {/* Mobile menu button */}
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-black p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
@@ -124,7 +122,7 @@ export default function Navbar() {
                 </div>
                 <div className="ml-3">
                   <div className="text-base/5 font-medium text-white">{user.name}</div>
-                  <div className="text-sm font-medium text-gray-400">{user.email}</div>
+                  <div className="text-sm font-medium text-black">{user.email}</div>
                 </div>
           
               </div>
@@ -133,7 +131,7 @@ export default function Navbar() {
                   <DisclosureButton
                     key={item.name}
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-black hover:text-white"
                   >
                     {item.name}
                   </DisclosureButton>
