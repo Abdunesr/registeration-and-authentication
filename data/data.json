@@ -54,6 +54,21 @@
           "coursescore": 0
         }
       ]
+    },
+    {
+      "id": "123566",
+      "name": "firaol",
+      "username": "naol528",
+      "password": "Naol@1234",
+      "department": "software enginering",
+      "year": "2",
+      "courses": [
+        {
+          "coursecode": "54666",
+          "coursename": "mars",
+          "coursescore": 0
+        }
+      ]
     }
   ],
   "questions": [
