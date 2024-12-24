@@ -107,7 +107,69 @@ export default function Questioninput() {
                   </div>
                 </div>
               </div>
-
+              <div className="sm:col-span-4">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm/6 font-medium text-gray-900"
+                >
+                  Course code
+                </label>
+                <div className="mt-2">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      value={questions.subject}
+                      onChange={handleinput}
+                      required
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="sm:col-span-4">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm/6 font-medium text-gray-900"
+                >
+                  Allowed Time:
+                </label>
+                <div className="mt-2">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      value={questions.subject}
+                      onChange={handleinput}
+                      required
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="sm:col-span-4">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm/6 font-medium text-gray-900"
+                >
+                  start time:
+                </label>
+                <div className="mt-2">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      value={questions.subject}
+                      onChange={handleinput}
+                      required
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
+                    />
+                  </div>
+                </div>
+              </div>
               {Array.isArray(questions.questionss) &&
                 questions.questionss.map((course, index) => (
                   <div
