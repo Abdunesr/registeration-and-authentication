@@ -73,20 +73,24 @@
   ],
   "questions": [
     {
-      "id": "4c8f",
-      "subject": "general question",
+      "id": "3b42",
+      "subject": "computer programing",
+      "coursecode": "123456",
+      "allowedtime": "11:31",
+      "starttime": "11:34",
       "questionss": [
         {
+          "question": "what is the the out putof this code ?",
+          "option": ["abjabdjbsahj", "manndma", "manmdna", "amndmnda"],
+          "answer": "2"
+        },
+        {
           "question": "who is the legend in 21 centurey?",
-          "option": [
-            "baltazar",
-            "mia khalifa",
-            "jhony sins",
-            "p dididy"
-          ],
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
           "answer": "1"
         }
-      ]
+      ],
+      "finishtime": "13:30"
     }
   ]
 }

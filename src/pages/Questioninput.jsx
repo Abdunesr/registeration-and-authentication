@@ -5,6 +5,9 @@ import Loading from "../componet/Loading";
 export default function Questioninput() {
   const inistalstate = {
     subject: "",
+    coursecode: Number,
+    finishtime: Date(),
+    starttime: Date(),
     questionss: [
       {
         question: "",
@@ -109,7 +112,7 @@ export default function Questioninput() {
               </div>
               <div className="sm:col-span-4">
                 <label
-                  htmlFor="subject"
+                  htmlFor="coursecode"
                   className="block text-sm/6 font-medium text-gray-900"
                 >
                   Course code
@@ -117,10 +120,10 @@ export default function Questioninput() {
                 <div className="mt-2">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
-                      id="subject"
-                      name="subject"
+                      id="coursecode"
+                      name="coursecode"
                       type="text"
-                      value={questions.subject}
+                      value={questions.coursecode}
                       onChange={handleinput}
                       required
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
@@ -130,18 +133,18 @@ export default function Questioninput() {
               </div>
               <div className="sm:col-span-4">
                 <label
-                  htmlFor="subject"
+                  htmlFor="finishtime"
                   className="block text-sm/6 font-medium text-gray-900"
                 >
-                  Allowed Time:
+                  Finish Time:
                 </label>
                 <div className="mt-2">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={questions.subject}
+                      id="finishtime"
+                      name="finishtime"
+                      type="time"
+                      value={questions.finishtime}
                       onChange={handleinput}
                       required
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
@@ -151,7 +154,7 @@ export default function Questioninput() {
               </div>
               <div className="sm:col-span-4">
                 <label
-                  htmlFor="subject"
+                  htmlFor="starttime"
                   className="block text-sm/6 font-medium text-gray-900"
                 >
                   start time:
@@ -159,10 +162,10 @@ export default function Questioninput() {
                 <div className="mt-2">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={questions.subject}
+                      id="starttime"
+                      name="starttime"
+                      type="time"
+                      value={questions.starttime}
                       onChange={handleinput}
                       required
                       className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
