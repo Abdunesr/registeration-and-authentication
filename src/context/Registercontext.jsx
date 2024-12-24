@@ -88,7 +88,7 @@ function Registercontext({ children }) {
           setApidata(data);
         } catch (err) {
           console.log(err);
-          dispatch({ type: "register-error", payload: err});
+          dispatch({ type: "register-error", payload: err });
         }
       }
       fetchdata();

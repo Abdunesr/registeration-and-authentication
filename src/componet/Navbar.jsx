@@ -1,42 +1,53 @@
-import React from 'react'
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
-import { useRegister } from '../context/Registercontext'
-import { useAuth } from '../context/Authprovider'
+import React from "react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import { useRegister } from "../context/Registercontext";
+import { useAuth } from "../context/Authprovider";
 export default function Navbar() {
- const {administrator}= useRegister()
- const {username}=administrator
+  const { administrator } = useRegister();
+  const { username } = administrator;
 
   const user = {
-    name:"administrator" ,
+    name: "administrator",
     email: username,
-    imageUrl:
-      'avatar.png',
-  }
+    imageUrl: "avatar.png",
+  };
   const navigation = [
-    { name: 'student regestration form', href: '/dashbord', current: true },
-    { name: 'questions input form', href: '/dashbord/question-input-form', current:  true },
-    { name: 'student result', href: '/dashbord/results', current: true },
-  ]
-  
-  const userNavigation = [
-    { name: 'Sign out', href: '/'  },
-  ]
-  
+    { name: "student regestration form", href: "/dashbord", current: true },
+    {
+      name: "questions input form",
+      href: "/dashbord/question-input-form",
+      current: true,
+    },
+    { name: "student result", href: "/dashbord/results", current: true },
+  ];
+
+  const userNavigation = [{ name: "Sign out", href: "/" }];
+
   function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(" ");
   }
-  
+
   return (
     <>
-           <div className="min-h-full">
+      <div className="min-h-full">
         <Disclosure as="nav" className="bg-blue-400">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <div className="shrink-0 ">
-                <h1 className='text-black text-2xl font-extrabold'>Online Exam </h1>
+                  <h1 className="text-black text-2xl font-extrabold">
+                    Online Exam{" "}
+                  </h1>
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
@@ -44,10 +55,12 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        aria-current={item.current ? 'page' : undefined}
+                        aria-current={item.current ? "page" : undefined}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium',
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
                         )}
                       >
                         {item.name}
@@ -58,14 +71,17 @@ export default function Navbar() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
-                        <img alt="" src={user.imageUrl} className="size-8 rounded-full" />
+                        <img
+                          alt=""
+                          src={user.imageUrl}
+                          className="size-8 rounded-full"
+                        />
                       </MenuButton>
                     </div>
                     <MenuItems
@@ -76,7 +92,6 @@ export default function Navbar() {
                         <MenuItem key={item.name}>
                           <Link
                             to={item.href}
-                            
                             className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                           >
                             {item.name}
@@ -92,8 +107,14 @@ export default function Navbar() {
                 <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-black p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
-                  <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
-                  <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-[open]:block" />
+                  <Bars3Icon
+                    aria-hidden="true"
+                    className="block size-6 group-data-[open]:hidden"
+                  />
+                  <XMarkIcon
+                    aria-hidden="true"
+                    className="hidden size-6 group-data-[open]:block"
+                  />
                 </DisclosureButton>
               </div>
             </div>
@@ -105,10 +126,11 @@ export default function Navbar() {
                 <DisclosureButton
                   key={item.name}
                   to={item.href}
-    
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium',
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
                   )}
                 >
                   {item.name}
@@ -118,13 +140,20 @@ export default function Navbar() {
             <div className="border-t border-gray-700 pb-3 pt-4">
               <div className="flex items-center px-5">
                 <div className="shrink-0">
-                  <img alt="" src={user.imageUrl} className="size-10 rounded-full" />
+                  <img
+                    alt=""
+                    src={user.imageUrl}
+                    className="size-10 rounded-full"
+                  />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base/5 font-medium text-white">{user.name}</div>
-                  <div className="text-sm font-medium text-black">{user.email}</div>
+                  <div className="text-base/5 font-medium text-white">
+                    {user.name}
+                  </div>
+                  <div className="text-sm font-medium text-black">
+                    {user.email}
+                  </div>
                 </div>
-          
               </div>
               <div className="mt-3 space-y-1 px-2">
                 {userNavigation.map((item) => (
@@ -140,7 +169,7 @@ export default function Navbar() {
             </div>
           </DisclosurePanel>
         </Disclosure>
-        </div>
+      </div>
     </>
-  )
+  );
 }
