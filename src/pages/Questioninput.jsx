@@ -9,6 +9,7 @@ export default function Questioninput() {
     finishtime: Date(),
     starttime: Date(),
     date: Date(),
+    autecode: String,
     questionss: [
       {
         question: "",
@@ -132,7 +133,27 @@ export default function Questioninput() {
                   </div>
                 </div>
               </div>
-
+              <div className="sm:col-span-4">
+                <label
+                  htmlFor="autecode"
+                  className="block text-sm/6 font-medium text-gray-900"
+                >
+                  Autentcation code
+                </label>
+                <div className="mt-2">
+                  <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <input
+                      id="autecode"
+                      name="autecode"
+                      type="text"
+                      value={questions.autecode}
+                      onChange={handleinput}
+                      required
+                      className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="sm:col-span-4">
                 <label
                   htmlFor="date"
