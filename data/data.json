@@ -73,69 +73,144 @@
   ],
   "questions": [
     {
-      "id": "3b42",
+      "id": "dfa2",
       "subject": "computer programing",
       "coursecode": "123456",
-      "finishtime": "11:31",
-      "starttime": "11:30",
+      "finishtime": "10:00",
+      "starttime": "00:00",
+      "autecode": "appdev",
       "questionss": [
         {
-          "question": "what is the the out putof this code ?",
-          "option": [
-            "abjabdjbsahj",
-            "manndma",
-            "manmdna",
-            "amndmnda"
-          ],
+          "question": "what is the the output of this code ?",
+          "option": ["baltazar", "mia khalifa", "mnm", "mnmn"],
+          "answer": "1"
+        }
+      ],
+      "date": "2024-12-25"
+    },
+    {
+      "id": "122a",
+      "subject": "mats",
+      "coursecode": "8898999",
+      "finishtime": "00:55",
+      "starttime": "03:55",
+      "date": "2024-12-26",
+      "autecode": "appdev",
+      "questionss": [
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "answer": "3"
+        },
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
           "answer": "2"
         },
         {
           "question": "who is the legend in 21 centurey?",
-          "option": [
-            "baltazar",
-            "mia khalifa",
-            "jhony sins",
-            "p dididy"
-          ],
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "answer": "4"
+        },
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
           "answer": "1"
         }
       ]
     },
     {
-      "id": "e876",
-      "subject": "compiler design",
-      "coursecode": "147654",
-      "finishtime": "11:00",
-      "starttime": "00:00",
+      "id": "165c",
+      "subject": "web programing",
+      "coursecode": "987878",
+      "finishtime": "00:16",
+      "starttime": "03:16",
+      "date": "2024-12-25",
+      "autecode": "appdev",
       "questionss": [
         {
           "question": "who is the legend in 21 centurey?",
-          "option": [
-            "baltazar",
-            "mia khalifa",
-            "jhony sins",
-            "p dididy"
-          ],
+          "option": ["nbambd", "manmdan", "manmdna", ",ammda"],
           "answer": "1"
         }
       ]
     },
     {
-      "id": "cead",
-      "subject": "aretfical intelegence",
-      "coursecode": "56777",
-      "finishtime": "00:32",
-      "starttime": "01:32",
+      "id": "5f31",
+      "subject": "matimatics",
+      "coursecode": "45678",
+      "finishtime": "09:45",
+      "starttime": "01:45",
+      "date": "2024-12-25",
+      "autecode": "appdev",
       "questionss": [
         {
           "question": "what is the the out putof this code ?",
-          "option": [
-            "abjabdjbsahj",
-            "manndma",
-            "amnd",
-            "amndmnda"
-          ],
-          "answer": "5"
+          "option": ["amna", "mnm", "manmdna", "mand"],
+          "answer": "1"
+        }
+      ]
+    },
+    {
+      "id": "cdbd",
+      "subject": "app development ",
+      "coursecode": "453718",
+      "finishtime": "18:22",
+      "starttime": "20:23",
+      "date": "2024-12-25",
+      "autecode": "appdev",
+      "questionss": [
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "answer": "1"
+        }
+      ]
+    },
+    {
+      "id": "7a02",
+      "subject": "chemistry",
+      "coursecode": "1234598",
+      "finishtime": "04:17",
+      "starttime": "2:18",
+      "date": "2024-12-27",
+      "autecode": "chem",
+      "questionss": [
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "answer": "1"
+        },
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": ["baltazar", "manmdan", "manam", "mananmna"],
+          "answer": "2"
+        },
+        {
+          "question": "who is the best from the porn stars ?",
+          "option": ["bambi", "mia khalifa", "jhony sins", "dibora"],
+          "answer": "3"
+        }
+      ]
+    },
+    {
+      "id": "5c77",
+      "subject": "computer programing",
+      "coursecode": "765477",
+      "finishtime": "00:21",
+      "starttime": "03:21",
+      "date": "2024-12-28",
+      "autecode": "fuck",
+      "questionss": [
+        {
+          "question": "what is the output of console.log(\"jhony sins\")",
+          "option": ["best pornstar", "big dick", "aim at the pussy", "fucker"],
+          "answer": "1"
+        },
+        {
+          "question": "what is the output of console.log(\"bambi\")",
+          "option": ["shele ", "bdatam", "fengari", "teletlach"],
+          "answer": "1"
         }
       ]
     }
