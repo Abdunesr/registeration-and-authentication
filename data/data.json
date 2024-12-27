@@ -69,6 +69,121 @@
           "coursescore": 0
         }
       ]
+    },
+    {
+      "id": "123456",
+      "name": "solomon mandefro ",
+      "username": "sol",
+      "password": "sol1234",
+      "department": "information tecnology",
+      "year": "4",
+      "courses": [
+        {
+          "coursecode": "123456",
+          "coursename": "mats",
+          "coursescore": 0
+        },
+        {
+          "coursecode": "147654",
+          "coursename": "compiler",
+          "coursescore": null
+        }
+      ]
+    },
+    {
+      "id": "127888",
+      "name": "abdela nesredin",
+      "username": "abdela",
+      "password": "12345678",
+      "department": "software enginering",
+      "year": "4",
+      "courses": [
+        {
+          "coursecode": "987878",
+          "coursename": "mats",
+          "coursescore": 0
+        },
+        {
+          "coursecode": "147654",
+          "coursename": "english",
+          "coursescore": null
+        },
+        {
+          "coursecode": "123456",
+          "coursename": "compiler",
+          "coursescore": null
+        },
+        {
+          "coursecode": "123456",
+          "coursename": "java",
+          "coursescore": null
+        },
+        {
+          "coursecode": "147654",
+          "coursename": "MAD",
+          "coursescore": null
+        }
+      ]
+    },
+    {
+      "id": "123478",
+      "name": "Habtamu ",
+      "username": "habtamu34",
+      "password": "12345678",
+      "department": "Kebede",
+      "year": "3",
+      "courses": [
+        {
+          "coursecode": "123456",
+          "coursename": "artefical intelegence",
+          "coursescore": 0
+        },
+        {
+          "coursecode": "8898999",
+          "coursename": "matimatics",
+          "coursescore": null
+        },
+        {
+          "coursecode": "8898999",
+          "coursename": "compile design",
+          "coursescore": null
+        }
+      ]
+    },
+    {
+      "id": "870896",
+      "name": "meron getnet",
+      "username": "meron@1234",
+      "password": "meron1234",
+      "department": "software enginering",
+      "year": "4",
+      "courses": [
+        {
+          "coursecode": "8898999",
+          "coursename": "compiler",
+          "coursescore": 0
+        },
+        {
+          "coursecode": "987878",
+          "coursename": "software security",
+          "coursescore": null
+        },
+        {
+          "coursecode": "987878",
+          "coursename": "software testing",
+          "coursescore": null
+        },
+        {
+          "coursecode": "987878",
+          "coursename": "software enginering",
+          "coursescore": null
+        },
+        {
+          "coursecode": "987878",
+          "coursename": "advanced",
+          "coursescore": null
+        }
+      ]
     }
   ],
   "questions": [
@@ -82,7 +197,12 @@
       "questionss": [
         {
           "question": "what is the the output of this code ?",
-          "option": ["baltazar", "mia khalifa", "mnm", "mnmn"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "mnm",
+            "mnmn"
+          ],
           "answer": "1"
         }
       ],
@@ -99,22 +219,42 @@
       "questionss": [
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "3"
         },
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "2"
         },
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "4"
         },
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "1"
         }
       ]
@@ -130,7 +270,12 @@
       "questionss": [
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["nbambd", "manmdan", "manmdna", ",ammda"],
+          "option": [
+            "nbambd",
+            "manmdan",
+            "manmdna",
+            ",ammda"
+          ],
           "answer": "1"
         }
       ]
@@ -146,7 +291,12 @@
       "questionss": [
         {
           "question": "what is the the out putof this code ?",
-          "option": ["amna", "mnm", "manmdna", "mand"],
+          "option": [
+            "amna",
+            "mnm",
+            "manmdna",
+            "mand"
+          ],
           "answer": "1"
         }
       ]
@@ -162,7 +312,12 @@
       "questionss": [
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "1"
         }
       ]
@@ -178,17 +333,32 @@
       "questionss": [
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "mia khalifa", "jhony sins", "p dididy"],
+          "option": [
+            "baltazar",
+            "mia khalifa",
+            "jhony sins",
+            "p dididy"
+          ],
           "answer": "1"
         },
         {
           "question": "who is the legend in 21 centurey?",
-          "option": ["baltazar", "manmdan", "manam", "mananmna"],
+          "option": [
+            "baltazar",
+            "manmdan",
+            "manam",
+            "mananmna"
+          ],
           "answer": "2"
         },
         {
           "question": "who is the best from the porn stars ?",
-          "option": ["bambi", "mia khalifa", "jhony sins", "dibora"],
+          "option": [
+            "bambi",
+            "mia khalifa",
+            "jhony sins",
+            "dibora"
+          ],
           "answer": "3"
         }
       ]
@@ -204,13 +374,75 @@
       "questionss": [
         {
           "question": "what is the output of console.log(\"jhony sins\")",
-          "option": ["best pornstar", "big dick", "aim at the pussy", "fucker"],
+          "option": [
+            "best pornstar",
+            "big dick",
+            "aim at the pussy",
+            "fucker"
+          ],
           "answer": "1"
         },
         {
           "question": "what is the output of console.log(\"bambi\")",
-          "option": ["shele ", "bdatam", "fengari", "teletlach"],
+          "option": [
+            "shele ",
+            "bdatam",
+            "fengari",
+            "teletlach"
+          ],
           "answer": "1"
+        }
+      ]
+    },
+    {
+      "id": "6b31",
+      "subject": "compiler design",
+      "coursecode": "123456",
+      "finishtime": "18:54",
+      "starttime": "13:54",
+      "date": "2024-12-28",
+      "autecode": "compiler",
+      "questionss": [
+        {
+          "question": "what are the phases of compiler?",
+          "option": [
+            "4",
+            "3",
+            "8",
+            "7"
+          ],
+          "answer": "1"
+        },
+        {
+          "question": "what is the difference between compiler and interpreter",
+          "option": [
+            "there are 4 differences",
+            "how can you develop the software without knowing compiler and interpreter ",
+            "please read be carefull about you read from option b",
+            "helllo you are the gratest man in the history "
+          ],
+          "answer": "4"
+        }
+      ]
+    },
+    {
+      "id": "74eb",
+      "subject": "man",
+      "coursecode": "123456",
+      "finishtime": "20:01",
+      "starttime": "12:59",
+      "date": "2024-12-27",
+      "autecode": "appdev",
+      "questionss": [
+        {
+          "question": "who is the legend in 21 centurey?",
+          "option": [
+            "abjabdjbsahj",
+            "manmd,",
+            "amnd",
+            ",ammda"
+          ],
+          "answer": "nmmn"
         }
       ]
     }
