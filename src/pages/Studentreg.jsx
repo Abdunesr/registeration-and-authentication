@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import Loading from "../componet/Loading";
 import Error from "./Error";
 import { useNavigate } from "react-router-dom";
+import { Alert } from "@mui/material";
 export default function Studentreg() {
+  const [successMessage, setSuceesmessage] = useState("");
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -38,6 +40,10 @@ export default function Studentreg() {
       }
 
       if (response.ok) {
+        setSuceesmessage("Student registered successfully!");
+        setTimeout(() => {
+          setSuceesmessage("");
+        }, 3000);
         dispatch({ type: "register-success" });
       }
 
@@ -97,6 +103,13 @@ export default function Studentreg() {
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="space-y-12">
+            <div className="fixed top-20 right-20">
+              {successMessage && (
+                <Alert variant="filled" severity="success">
+                  {successMessage}
+                </Alert>
+              )}
+            </div>
             <div className="border-b border-gray-900/10 pb-12">
               <div className="font-bold text-xl">Student Registration form</div>
               <div className="mt-10 grid grid-cols-1  gap-y-8 sm:grid-cols-6">
@@ -271,6 +284,7 @@ export default function Studentreg() {
           <div className="mt-6 flex items-center justify-end gap-x-6">
             <button
               type="submit"
+              disabled={isloading}
               className="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Save

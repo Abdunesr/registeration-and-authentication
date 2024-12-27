@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRegister } from "../context/Registercontext";
 import Loading from "../componet/Loading";
+import { Alert } from "@mui/material";
 
 export default function Questioninput() {
   const inistalstate = {
@@ -19,7 +20,7 @@ export default function Questioninput() {
     ],
   };
   const [questions, setQuestions] = useState(inistalstate);
-
+  const [successMessage, setSuceesmessage] = useState("");
   const { dispatch, state } = useRegister();
   const { isloading, error, iserror } = state;
   function handleinput(event) {
@@ -42,7 +43,13 @@ export default function Questioninput() {
       if (!response.ok) {
         throw new Error("Registration failed");
       }
-      setQuestions(inistalstate);
+      if (response.ok) {
+        setQuestions(inistalstate);
+        setSuceesmessage("questions uploaded sucessfuly");
+        setTimeout(() => {
+          setSuceesmessage("");
+        }, 3000);
+      }
       dispatch({ type: "register-success" });
     } catch (error) {
       dispatch({ type: "register-error", payload: error.message });
@@ -87,6 +94,13 @@ export default function Questioninput() {
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="space-y-12">
+            <div className="fixed top-20 right-20">
+              {successMessage && (
+                <Alert variant="filled" severity="success">
+                  {successMessage}
+                </Alert>
+              )}
+            </div>
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-xl font-bold text-gray-900">
                 Post questions one by one
